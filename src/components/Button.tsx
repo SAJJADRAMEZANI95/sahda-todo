@@ -12,7 +12,6 @@ const buttonStyle = {
   borderRadius: "5px",
   cursor: "pointer",
   transition: "background-color 0.3s ease",
-
   ":hover": {
     backgroundColor: "#2980b9",
   },

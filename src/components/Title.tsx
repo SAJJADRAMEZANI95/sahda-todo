@@ -11,5 +11,6 @@ const titleStyle = {
 type TitleProps = HTMLAttributes<HTMLParagraphElement>;
 
 export function Title({ style, ...restProps }: TitleProps) {
+  
   return <p style={{ ...titleStyle, ...style }} {...restProps} />;
 }

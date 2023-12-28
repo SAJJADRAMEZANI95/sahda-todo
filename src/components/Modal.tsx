@@ -26,6 +26,7 @@ const overlayStyle = {
 type ModalProps = PropsWithChildren<{ onClose: () => void; isOpen: boolean }>;
 
 export const Modal = ({ children, onClose, isOpen }: ModalProps) => {
+  
   const modalDisplay = isOpen ? "block" : "none";
 
   return (

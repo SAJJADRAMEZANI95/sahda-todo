@@ -11,14 +11,14 @@ const inputStyle = {
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({ value, onChange, placeholder }: InputProps) => {
+export const Input = ({ value, onChange, placeholder, style }: InputProps) => {
   return (
     <input
       type="text"
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      style={inputStyle}
+      style={{...inputStyle,...style}}
     />
   );
 };
