@@ -1,5 +1,4 @@
-import { toggleTodo, deleteTodo } from "@/api";
-import { TODO } from "@/api/types";
+import { toggleTodo, deleteTodo, TODO } from "@/api";
 import { Button, ListTitle } from "@/components";
 import { UpdateModal } from "./UpdateModal";
 import { errorToast, successToast } from "@/utils";

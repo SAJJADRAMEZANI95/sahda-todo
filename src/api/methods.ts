@@ -1,4 +1,4 @@
-import { BASE_URL } from "./constants";
+import { BASE_URL_ADDRESS } from "./constants";
 
 const DEFAULT_HEADER = {
   "Content-Type": "application/json",
@@ -16,7 +16,7 @@ function errorCatcher(error: any) {
 }
 
 export async function getTodoList() {
-  return fetch(BASE_URL)
+  return fetch(BASE_URL_ADDRESS)
     .then((response) => {
       errorThrower(response);
       return response.json();
@@ -28,7 +28,7 @@ export async function getTodoList() {
 
 export async function toggleTodo(params: { id: string; type: number }) {
   try {
-    const response = await fetch(`${BASE_URL}/update.php`, {
+    const response = await fetch(`${BASE_URL_ADDRESS}/update.php`, {
       method: "POST",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ ...params, sort: true }),
@@ -44,7 +44,7 @@ export async function toggleTodo(params: { id: string; type: number }) {
 
 export async function deleteTodo({ id }: { id: string }) {
   try {
-    const response = await fetch(`${BASE_URL}/delete.php`, {
+    const response = await fetch(`${BASE_URL_ADDRESS}/delete.php`, {
       method: "delete",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ id, type: 2, sort: true }),
@@ -60,7 +60,7 @@ export async function deleteTodo({ id }: { id: string }) {
 
 export async function updateTodo({ id, val }: { id: string; val: string }) {
   try {
-    const response = await fetch(`${BASE_URL}/update.php`, {
+    const response = await fetch(`${BASE_URL_ADDRESS}/update.php`, {
       method: "delete",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ id, item: val }),
@@ -76,7 +76,7 @@ export async function updateTodo({ id, val }: { id: string; val: string }) {
 
 export async function createTodo({ val }: { val: string }) {
   try {
-    const response = await fetch(`${BASE_URL}/create/task/`, {
+    const response = await fetch(`${BASE_URL_ADDRESS}/create/task/`, {
       method: "delete",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ item: val }),

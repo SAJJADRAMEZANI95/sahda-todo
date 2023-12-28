@@ -1,1 +1,1 @@
-export const BASE_URL = "https://hr-todo.sahda.ir";
+export const BASE_URL_ADDRESS = "https://hr-todo.sahda.ir";
