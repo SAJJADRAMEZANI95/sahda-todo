@@ -19,7 +19,7 @@ export function ListItem({ id, item, todoStatu, refetch }: ListItemProps) {
   };
 
   const handleDelete = () => {
-    deleteTodo({ id })
+    deleteTodo( id )
       .then(() => {
         successToast();
         refetch();

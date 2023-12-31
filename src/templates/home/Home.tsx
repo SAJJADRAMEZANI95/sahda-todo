@@ -1,6 +1,6 @@
 import { getTodoList, TODO } from "@/api";
 import { Title } from "@/components";
-import { useEffect, useState } from "react";
+import {useEffect,useState} from 'react'
 import { ListItem } from "./ListItem";
 import { AddTodo } from "./AddTodo";
 import { errorToast } from "@/utils";
@@ -15,6 +15,7 @@ export function Home() {
     getTodoList()
       .then((res: typeof data) => {
         setData(res);
+        console.log(res)
       })
       .catch(() => {
         errorToast();

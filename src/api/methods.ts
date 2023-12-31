@@ -29,7 +29,7 @@ export async function getTodoList() {
 export async function toggleTodo(params: { id: string; type: number }) {
   try {
     const response = await fetch(`${BASE_URL_ADDRESS}/update.php`, {
-      method: "POST",
+      method: "PUT",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ ...params, sort: true }),
     });
@@ -42,7 +42,7 @@ export async function toggleTodo(params: { id: string; type: number }) {
   }
 }
 
-export async function deleteTodo({ id }: { id: string }) {
+export async function deleteTodo( id: string ) {
   try {
     const response = await fetch(`${BASE_URL_ADDRESS}/delete.php`, {
       method: "delete",
@@ -77,7 +77,7 @@ export async function updateTodo({ id, val }: { id: string; val: string }) {
 export async function createTodo({ val }: { val: string }) {
   try {
     const response = await fetch(`${BASE_URL_ADDRESS}/create/task/`, {
-      method: "delete",
+      method: "POST",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ item: val }),
     });
