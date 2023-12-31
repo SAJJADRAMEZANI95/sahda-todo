@@ -61,7 +61,7 @@ export async function deleteTodo({ id }: { id: string }) {
 export async function updateTodo({ id, val }: { id: string; val: string }) {
   try {
     const response = await fetch(`${BASE_URL_ADDRESS}/update.php`, {
-      method: "delete",
+      method: "PUT",
       headers: DEFAULT_HEADER,
       body: JSON.stringify({ id, item: val }),
     });
